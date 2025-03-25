@@ -38,12 +38,17 @@ public class UserServiceImpl {
     }
 
     public List<User> getUser() {
-        try{
-            int i=1/0;
-        }catch(Exception e)
-        {
-            throw new RuntimeException();
-        }
+
         return userRepository.findAll();
+    }
+
+    public User findByName(String name)
+    {
+        return userRepository.findByName(name);
+    }
+    public User findByNameAndEmail(String name, String email)
+    {
+
+        return userRepository.findByNameAndEmail(name, email);
     }
 }
